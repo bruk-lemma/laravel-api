@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,6 +15,11 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->integer('customer_id');
+            $table->integer('amount');
+            $table->string('status');
+            $table->dateTime('billed_date');
+            $table->dateTime('paid_date')->nullable();
             $table->timestamps();
         });
     }
